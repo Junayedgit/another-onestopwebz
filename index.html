@@ -19,6 +19,15 @@
     <script src="https://kit.fontawesome.com/d59c73af43.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="javascript.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "wYa5-OpDgfJedkMb6",
+            });
+        })();
+    </script>
 
 
 
@@ -120,10 +129,10 @@
                     class=" text-transparent bg-clip-text bg-gradient-to-r from-[#227F05] to-[#2EC500]"> US</span>
             </h1>
             <div class="hero">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img src="images/about.png" class="max-w-sm rounded-lg" />
+                <div class="hero-content flex-col-reverse  lg:flex-row-reverse">
+                    <img src="images/about.png" class=" rounded-lg" />
                     <div>
-                        <p class="pl-5 lg:pl-24 lg:pr-24 scroll  pb-8 text-2xl text-justify">
+                        <p class="pl-5 pr-5  lg:pl-10 lg:pr-10 scroll  pb-8 text-2xl text-justify">
                             Welcome to <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-[#227F05] to-[#2EC500]">OneStopWebz</span>!
                             We are your
@@ -327,47 +336,6 @@
             </div>
         </div>
 
-        <script>
-            // Initialize EmailJS with your Public Key
-            emailjs.init('H7taf3OQNgupVVg90');  // Your Public Key
-
-            // Function to handle the form submission and email sending
-            function sendEmail() {
-                // Get the form values
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var message = document.getElementById('message').value;
-
-                // Check if fields are filled
-                if (name === "" || email === "" || message === "") {
-                    alert("Please fill out all fields before submitting.");
-                    return;  // Exit the function if fields are empty
-                }
-
-                // Prepare the template parameters
-                var templateParams = {
-                    from_name: name,
-                    from_email: email,
-                    message: message
-                };
-
-                // Send the email using EmailJS with the correct Service ID and Template ID
-                emailjs.send('service_pomv60u', 'template_0asez94', templateParams)
-                    .then(function (response) {
-                        console.log('SUCCESS!', response);
-                        alert("Your message has been sent!");
-
-                        // Clear the form fields after successful submission
-                        document.getElementById('name').value = '';
-                        document.getElementById('email').value = '';
-                        document.getElementById('message').value = '';
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                        alert("Something went wrong. Please try again.");
-                    });
-            }
-        </script>
-
     </main>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="function.js"></script>
@@ -378,9 +346,9 @@
         }
     </script>
 
-    <footer class="footer bg-black text-white p-10">
+    <footer class="footer bg-black text-white p-10 pb-24">
         <aside>
-            <img src="images/LOGO.png" alt="">
+            <a href="index.html"><img src="images/LOGO.png" alt=""></a>
 
         </aside>
         <nav>
