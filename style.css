@@ -18,3 +18,7 @@ main {
     background-color: #2EC500;
     transform: scale(1.05);
 }
+
+html {
+    scroll-behavior: smooth;
+}
